@@ -40,20 +40,28 @@ void displayList(struct Node *head, const char *message)
 
 int main()
 {
+    int choice, value, flag = 1;
     struct Node *head = NULL;
+    while (flag)
+    {
+        printf("Enter 1 to insert at the beginning : \n 2 to display the list : \n or 0 to exit : \n");
+        scanf("%d", &choice);
 
-    head = Beginning(head, 3);
-    head = Beginning(head, 2);
-    head = Beginning(head, 1);
-
-    displayList(head, "Linked list before insertion: ");
-
-    int value;
-    printf("Enter value to insert at beginning: ");
-    scanf("%d", &value);
-
-    head = Beginning(head, value);
-    displayList(head, "Linked list after insertion: ");
-
-    return 0;
+        switch (choice)
+        {
+            case 1:
+                printf("Enter the value to insert at the beginning: ");
+                scanf("%d", &value);
+                head = Beginning(head, value);
+                break;
+            case 2:
+                displayList(head, "Linked list: ");
+                break;
+            case 0:
+                flag = 0;
+                break;
+            default:
+                printf("Invalid choice! Please try again.\n");
+        }
+    }  
 }
