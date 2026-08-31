@@ -14,6 +14,20 @@ struct Node *insertAtBeginning(struct Node *head, int newData)
     newNode->next = head;
     return newNode;
 }
+
+void displayList(struct Node *head)
+{
+    struct Node *temp = head;
+
+    printf("Linked list after insertion: ");
+    while (temp != NULL)
+    {
+        printf("%d ", temp->data);
+        temp = temp->next;
+    }
+    printf("\n");
+}
+
 int main()
 {
     struct Node *head = NULL;
@@ -27,6 +41,7 @@ int main()
     scanf("%d", &value);
 
     head = insertAtBeginning(head, value);
+    displayList(head);
 
     return 0;
 }
