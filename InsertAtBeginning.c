@@ -7,7 +7,7 @@ struct Node
     struct Node *next;
 };
 
-struct Node *insertAtBeginning(struct Node *head, int newData)
+struct Node *Beginning(struct Node *head, int newData)
 {
     struct Node *newNode;
     newNode = (struct Node *)malloc(sizeof(struct Node));
@@ -42,9 +42,9 @@ int main()
 {
     struct Node *head = NULL;
 
-    head = insertAtBeginning(head, 3);
-    head = insertAtBeginning(head, 2);
-    head = insertAtBeginning(head, 1);
+    head = Beginning(head, 3);
+    head = Beginning(head, 2);
+    head = Beginning(head, 1);
 
     displayList(head, "Linked list before insertion: ");
 
@@ -52,7 +52,7 @@ int main()
     printf("Enter value to insert at beginning: ");
     scanf("%d", &value);
 
-    head = insertAtBeginning(head, value);
+    head = Beginning(head, value);
     displayList(head, "Linked list after insertion: ");
 
     return 0;
