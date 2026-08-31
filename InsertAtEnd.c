@@ -50,20 +50,32 @@ void displayList(struct Node *head, const char *message)
 
 int main()
 {
+    int choice, value, flag = 1;
     struct Node *head = NULL;
+    while (flag)
+    {
+        printf("Enter 1 to insert at the end:\nEnter 2 to display the list:\nEnter 0 to exit:\n");
+        scanf("%d", &choice);
 
-    head = InsertAtEnd(head, 3);
-    head = InsertAtEnd(head, 2);
-    head = InsertAtEnd(head, 1);
+        switch (choice)
+        {
+            case 1:
+                printf("Enter the value to insert at the end: ");
+                scanf("%d", &value);
+                head = InsertAtEnd(head, value);
+                break;
+            case 2:
+                displayList(head, "Linked list: ");
+                break;
+            case 0:
+                flag = 0;
+                break;
+            default:
+                printf("Invalid choice! Please try again.\n");
 
-    displayList(head, "Linked list before insertion: ");
-
-    int value;
-    printf("Enter value to insert at end: ");
-    scanf("%d", &value);
-
-    head = InsertAtEnd(head, value);
-    displayList(head, "Linked list after insertion: ");
-
+        }
+    }  
     return 0;
+
 }
+
