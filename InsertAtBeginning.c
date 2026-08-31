@@ -44,7 +44,7 @@ int main()
     struct Node *head = NULL;
     while (flag)
     {
-        printf("Enter 1 to insert at the beginning : \n 2 to display the list : \n or 0 to exit : \n");
+        printf("Enter 1 to insert at the beginning:\nEnter 2 to display the list:\nEnter 0 to exit:\n");
         scanf("%d", &choice);
 
         switch (choice)
@@ -62,6 +62,8 @@ int main()
                 break;
             default:
                 printf("Invalid choice! Please try again.\n");
+
         }
     }  
+    return 0;
 }
