@@ -59,23 +59,20 @@ int main()
 
         switch (choice)
         {
-            case 1:
-                printf("Enter the value to insert at the end: ");
-                scanf("%d", &value);
-                head = InsertAtEnd(head, value);
-                break;
-            case 2:
-                displayList(head, "Linked list: ");
-                break;
-            case 0:
-                flag = 0;
-                break;
-            default:
-                printf("Invalid choice! Please try again.\n");
-
+        case 1:
+            printf("Enter the value to insert at the end: ");
+            scanf("%d", &value);
+            head = InsertAtEnd(head, value);
+            break;
+        case 2:
+            displayList(head, "Linked list: ");
+            break;
+        case 0:
+            flag = 0;
+            break;
+        default:
+            printf("Invalid choice! Please try again.\n");
         }
-    }  
+    }
     return 0;
-
 }
-
